@@ -24,4 +24,5 @@ fn main() {
     let b:char = 'b'; // char
     
     println!("B:{}",b);
+    
 }
