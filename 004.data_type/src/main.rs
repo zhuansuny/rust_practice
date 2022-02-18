@@ -9,7 +9,9 @@ fn main() {
     let tup:(i32,f64,u8) = (100,1.4,3);
 
     let (x,y,z) = tup;
+   
 
+    println!("X:{} Y:{} Z:{}",tup.0,tup.1,tup.2);
     println!("X:{} Y:{} Z:{}",x,y,z);
     
     
@@ -24,7 +26,11 @@ fn main() {
     let b:char = 'b'; // char
     
     println!("B:{}",b);
-
     
+    let guess:u32 = "42".parse().expect("Not a number!");
+    println!("B:{}",guess);
+
+    let emo:char = '😀';
+    println!("emo:{}",emo);
     
 }
