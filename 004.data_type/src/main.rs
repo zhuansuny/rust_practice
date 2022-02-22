@@ -32,5 +32,10 @@ fn main() {
 
     let emo:char = '😀';
     println!("emo:{}",emo);
+
+    let arr = [1,2,3,4,5,];
+    println!("arr:{:?}",arr[0]);
+ 
+    
     
 }
