@@ -16,6 +16,10 @@ fn main(){
     else{
         println!("a is zero");
     }
-    
+
+    let condition = true;
+    // 类似三元运算符
+    let number = if condition{5}else{6};
+    println!("The value of number is: {}", number);
 
 }
