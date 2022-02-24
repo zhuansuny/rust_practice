@@ -1,4 +1,6 @@
 fn main(){
+    // 所有权一个值只有一个变量拥有，赋值给其它变量时所有权也赋给了这个变量
+    // 基本类型没有所有权
     let mut s = String :: from("hello world");
 
     s.push_str("!");
