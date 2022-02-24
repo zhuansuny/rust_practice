@@ -17,6 +17,10 @@ fn main(){
          println!("the value is: {}", a);
          
      }
+     for (k,v) in arr.iter().enumerate() {
+         println!("the index is: {} , the value is: {}", k,v);
+         
+     }
 
      // (1..5)range从1到5，不包含5（左闭右开）
      // (1..=5)range从1到5，包含5（左闭右闭）
