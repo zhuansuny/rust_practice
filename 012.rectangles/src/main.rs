@@ -18,8 +18,17 @@ fn main() {
         height : 50,
     };
     println!("The area of the rectangle is {}",area3(rectangle));
+    println!("The area of the rectangle is {}",rectangle.area());
     println!("rectangle is {:#?}", rectangle);  // {:#?}  比{:？} 多打印格式化的数据
     
+
+    let rectangle1 = &Rectangle{  
+        width : 10,
+        height : 20,
+    };
+
+    println!("is rectangle can hold rectangle1 : {}",rectangle.can_hold(rectangle1));
+
 
 }
 
@@ -42,4 +51,15 @@ struct Rectangle {
 fn area3(rectangles: &Rectangle) -> u32 {
     rectangles.width * rectangles.height
 
+}
+
+// 结构体的方法定义
+impl Rectangle {
+    fn area(&self) ->u32 {
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width> other.width && self.height > other.width
+    }
 }
