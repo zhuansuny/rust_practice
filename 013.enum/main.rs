@@ -18,6 +18,9 @@ fn main (){
 
     println!("home is {:?} loopback is {:?}",home,loopback);
 
+    let msg = Message :: Write(String:: from ("this is a message"));
+    msg.call();
+
 }
 // 定义一个枚举类型
 # [derive(Debug)]
@@ -60,3 +63,18 @@ fn route(kind: IpAddrKind){
     println!("the kind is {:?}",kind);
 }
 
+# [derive(Debug)]
+enum Message {
+    Quit,
+    Move{x:i32,y:i32},
+    Write(String),
+    ChangColor(i32,i32,i32),
+}
+
+// 枚举可以定义方法
+impl Message {
+    fn call(&self){
+        println!("{:?}",self)
+    }
+
+}
