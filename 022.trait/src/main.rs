@@ -26,6 +26,8 @@ fn main() {
 
     notify(&article);
     notify_v2(article);
+    some_function(5.4,6);
+    returns_summarizable(true);
 }
 // trait 作为参数
 pub fn notify(item: &impl Summary) {
@@ -41,7 +43,7 @@ pub fn notify_v3<T: Summary+Display>(item: T) {
 }
 
 // 可以用where指定
-fn some_function<T, U>(t: T, u: U) -> i32
+fn some_function<T, U>(_t: T, _u: U) -> i32
 where T: Display + Clone,
 U: Clone + Debug
 {
