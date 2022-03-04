@@ -1,4 +1,4 @@
-#[cfg(test)]
+#[cfg(test)]  // 这个参数代表编译的时候忽略测试
 mod tests {
     use super::*;
     #[test]
@@ -34,13 +34,13 @@ pub fn add_two(a: i32) -> i32 {
 }
 
 #[derive(Debug)]
-struct Rectangle {
-    width: u32,
-    height: u32,
+pub struct Rectangle {
+   pub width: u32,
+   pub height: u32,
 }
 
 impl Rectangle {
-    fn can_hold(&self, other: &Rectangle) -> bool {
+    pub fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
 }
