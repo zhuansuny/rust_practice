@@ -1,0 +1,18 @@
+[package]
+name = "rust_cargo_test"  # 发布时名称要唯一
+version = "0.1.0"
+edition = "2021"
+
+description = "rust_cargo_test"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[profile.dev]
+opt-level = 1  # 编译时优化级别，默认为1
+
+[profile.release]
+opt-level = 3  # 编译时优化级别，3最高 编译时间更长
+
