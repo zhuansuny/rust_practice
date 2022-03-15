@@ -1,6 +1,6 @@
 [package]
 name = "rust_cargo_test"  # 发布时名称要唯一
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 description = "rust_cargo_test"
