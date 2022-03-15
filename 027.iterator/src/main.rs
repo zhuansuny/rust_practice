@@ -9,6 +9,23 @@ fn main() {
     // 消耗迭代器方法 ， 方法中调用了 next方法
     let sum: i32 = v1_iter.sum();
     println!("sum is {}", sum);
+
+    let _shoe =  shoes_in_my_size(vec![
+        Shoe {
+            size: 10,
+            style: String::from("sneaker"),
+        },
+        Shoe {
+            size: 20,
+            style: String::from("sandal"),
+        },
+        Shoe {
+            size: 20,
+            style: String::from("boot"),
+        },
+    ],20);
+
+    let _counter = Counter::new();
 }
 #[derive(PartialEq, Debug)]
 struct Shoe {
