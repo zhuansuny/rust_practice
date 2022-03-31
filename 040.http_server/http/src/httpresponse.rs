@@ -1,4 +1,5 @@
-use std::{collections::HashMap, fmt::Write};
+use std::{collections::HashMap};
+use std::io::prelude::*;
 
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Httpresponse<'a> {
