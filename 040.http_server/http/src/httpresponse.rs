@@ -3,11 +3,11 @@ use std::io::prelude::*;
 
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Httpresponse<'a> {
-    version: &'a str,
-    status_code: &'a str,
-    status_text: &'a str,
-    headers: Option<HashMap<&'a str, &'a str>>,
-    body: Option<String>,
+    version: &'a str, //http协议版本
+    status_code: &'a str, //状态码
+    status_text: &'a str,//状态码描述
+    headers: Option<HashMap<&'a str, &'a str>>,//响应头
+    body: Option<String>,//响应体
 }
 
 impl<'a> Default for Httpresponse<'a> {
@@ -86,7 +86,7 @@ impl <'a> Httpresponse<'a> {
     pub fn status_text(& self)-> &str {
         self.status_text
     }
-
+    // 将headers转换成字符串
     pub fn headers(& self)-> String {
         let map: HashMap<&str,&str> = self.headers.clone().unwrap();
         let mut header_string: String = "".into();

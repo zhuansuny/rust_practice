@@ -7,6 +7,7 @@ pub enum Method {
     Uninitialized,
 }
 
+// 实现 From trait 则可以用 .into() 从&str转换成Method
 impl From<&str> for Method {
     fn from(s: &str) -> Method {
         match s {
@@ -17,7 +18,7 @@ impl From<&str> for Method {
         }
     }
 }
-
+//http 协议版本
 #[derive(Debug,PartialEq, Eq)]
 pub enum Version {
     V1_1,
@@ -45,11 +46,11 @@ pub enum Resource {
 
 #[derive(Debug)]
 pub struct HttpRequest {
-    pub method: Method,
-    pub version: Version,
-    pub resource: Resource,
-    pub headers: HashMap<String,String>,
-    pub msg_body: String,
+    pub method: Method, //请求方法
+    pub version: Version, //http协议版本
+    pub resource: Resource,//请求资源
+    pub headers: HashMap<String,String>,//请求头
+    pub msg_body: String,//请求体
 }
 
 impl From<String> for HttpRequest {
@@ -71,8 +72,9 @@ impl From<String> for HttpRequest {
                 parsed_headers.insert(key, value);
                 
             }else if line.len() == 0 {
-
+            // 空行
             }else {
+            // 消息体
                 parsed_msg_body = line;
             }
             
@@ -89,7 +91,7 @@ impl From<String> for HttpRequest {
     }
     
 }
-
+// 解析请求行
 fn process_req_line(s: &str) -> (Method,Resource,Version){
     let mut words = s.split_whitespace();
     let method = words.next().unwrap();
@@ -104,7 +106,7 @@ fn process_req_line(s: &str) -> (Method,Resource,Version){
 
    
 }
-
+//解析请求头
 fn process_header_line(s: &str) -> (String,String){
     let mut items = s.split(":");
     let mut key = String::from("");
